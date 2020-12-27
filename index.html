@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <!-- AOS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
+    <!-- Glidejs -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.core.css"
+    />
+    <!-- Custom StyleSheet -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Portfolio Website</title>
+    <style>
+        *,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  background-color: #fff;
+  color: #000;
+  position: relative;
+  z-index: 1;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  max-width: 114rem;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    padding: 0 3rem;
+  }
+}
+
+/* Header */
+.header {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: #000;
+  z-index: 1;
+}
+
+.header img {
+  position: absolute;
+  right: 5%;
+  bottom: 0;
+  width: 60rem;
+  z-index: -1;
+}
+
+@media only screen and (max-width: 996px) {
+  .header {
+    min-height: 60vh;
+  }
+
+  .header img {
+    width: 50rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header img {
+    width: 40rem;
+  }
+}
+
+@media only screen and (max-width: 567px) {
+  .header {
+    min-height: 100vh;
+  }
+
+  .header img {
+    width: 35rem;
+  }
+}
+
+.logo h1 {
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.logo h1 span {
+  font-weight: bold;
+  color: #dd9a05;
+}
+
+.hamburger {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    max-width: 40rem;
+    height: 100%;
+    background-color: #fff;
+    transition: all 500ms ease-in-out;
+    z-index: 100;
+  }
+
+  .menu.show {
+    left: 0;
+  }
+
+  .hamburger {
+    display: block;
+    color: #fff;
+    font-size: 2.3rem;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+
+  body.show::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+  }
+}
+
+/* Hero */
+.hero {
+  position: absolute;
+  top: 50%;
+  transform: translate(25%, -50%);
+  color: #fff;
+}
+
+.hero h3 {
+  font-weight: 200;
+}
+
+.hero h1 {
+  font-size: 4.5rem;
+}
+
+.hero h4 {
+  font-size: 2rem;
+}
+.hero h4 span {
+  color: #dd9a05;
+  text-decoration: underline;
+}
+
+.hero a:link,
+.hero a:visited {
+  display: inline-block;
+  padding: 0.8rem 2.5rem;
+  border: 1px solid #dd9a05;
+  background-color: #dd9a05;
+  color: #fff;
+  margin-top: 2rem;
+}
+
+.hero a:hover {
+  background-color: transparent;
+}
+
+@media only screen and (max-width: 996px) {
+  .hero {
+    transform: translate(10%, -50%);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hero h1 {
+    font-size: 4rem;
+  }
+}
+
+@media only screen and (max-width: 567px) {
+  .hero {
+    top: 35%;
+    transform: translate(10%, -50%);
+  }
+
+  .hero h3 {
+    font-size: 1.6rem;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero h4 {
+    font-size: 1.6rem;
+  }
+}
+
+.icons {
+  position: absolute;
+  bottom: 5%;
+  left: 10%;
+  color: #fff;
+}
+
+.icons span:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.icons span {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+
+.icons span:hover {
+  color: #dd9a05;
+}
+
+@media only screen and (max-width: 567px) {
+  .icons {
+    display: none;
+  }
+}
+
+/* About */
+
+.section {
+  padding: 5;
+  overflow-x: hidden;
+}
+
+.about {
+  margin-top: 5rem;
+}
+
+.about-center {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem 5rem;
+}
+
+.title {
+  margin: 4rem 0 7rem 0;
+  text-align: center;
+}
+
+.title h1 {
+  font-size: 3rem;
+  display: inline-block;
+  position: relative;
+  z-index: 0;
+}
+
+.title h1::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -20%;
+  transform: translate(-50%, -50%);
+  background-color: #dd9a05;
+  width: 50%;
+  height: 0.4rem;
+  z-index: 1;
+}
+
+.left img {
+  height: 40rem;
+  max-width: 35rem;
+  object-fit: cover;
+}
+
+.right h1 {
+  margin-bottom: 2rem;
+}
+
+.right p {
+  line-height: 2;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.right h1 span {
+  color: #dd9a05;
+}
+
+a.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: #dd9a05;
+  color: #fff;
+  border-radius: 0.5rem;
+  border: 2px solid #dd9a05;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  transition: all 300ms ease-in-out;
+}
+
+a.btn:hover {
+  transform: translateY(-3px);
+  background-color: transparent;
+  color: inherit;
+}
+
+a.btn:active {
+  transform: translateY(0px);
+}
+
+@media only screen and (max-width: 996px) {
+  .right h1 {
+    font-size: 2rem;
+  }
+
+  .right p {
+    font-size: 1.5rem;
+  }
+
+  a.btn {
+    padding: 0.7rem 1.8rem;
+  }
+
+  .left img {
+    height: 40rem;
+    max-width: 25rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .about-center {
+    grid-template-columns: 1fr;
+    gap: 3rem 0rem;
+  }
+
+  .left {
+    text-align: center;
+  }
+
+  .left img {
+    height: 40rem;
+    max-width: 90%;
+  }
+}
+
+/* Services */
+.theme {
+  background-color: #000;
+}
+
+.theme .title {
+  color: #fff;
+}
+
+.services-center {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 3rem;
+}
+
+.service {
+  color: #fff;
+  background-color: #111;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 1rem;
+  transition: all 300ms ease-in-out;
+}
+
+.service span {
+  color: #dd9a05;
+  font-size: 4rem;
+  transition: all 300ms ease-in-out;
+}
+
+.service h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.service p {
+  font-size: 1.4rem;
+  color: #f1f1f1;
+}
+
+.service:hover {
+  background-color: #dd9a05;
+}
+
+.service:hover span {
+  color: #fff;
+}
+
+/* Skills */
+
+.skills-box:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.skills-box h4 {
+  font-size: 1.8rem;
+  color: #888;
+  font-size: 500;
+}
+
+.skills-box .skills-ilt {
+  width: 100%;
+  position: relative;
+  height: 0.4rem;
+  background-color: #ccc;
+  border-radius: 0.5rem;
+}
+
+.skills-box .skills-bar {
+  background-color: #dd9a05;
+  height: 0.4rem;
+}
+
+.skills-box .html {
+  width: 95%;
+}
+
+.skills-box .css {
+  width: 85%;
+}
+
+.skills-box .javascript {
+  width: 90%;
+}
+
+.skills-box .nodejs {
+  width: 80%;
+}
+
+.skills-box .mongodb {
+  width: 95%;
+}
+
+.skills-box span {
+  position: absolute;
+  bottom: 10%;
+  right: 0;
+  font-size: 1.4rem;
+}
+
+.skills-center {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+}
+
+.right h3 {
+  margin-bottom: 1rem;
+}
+
+.right p {
+  margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .skills-center {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Teams */
+.team {
+  color: #fff;
+  background-color: #111;
+  padding: 3rem;
+  text-align: center;
+  border-radius: 1rem;
+  border-bottom: 4px solid transparent;
+  transition: all 300ms ease-in-out;
+}
+
+.team .img-cover {
+  overflow: hidden;
+  border-radius: 100%;
+  border: 4px solid #dd9a05;
+  height: 13rem;
+  width: 13rem;
+  margin: 0 auto;
+  transition: all 300ms ease-in-out;
+}
+
+.team .img-cover img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.team h3 {
+  font-size: 1.6rem;
+  margin: 1rem 0;
+}
+
+.team p {
+  font-size: 1.5rem;
+  color: #ccc;
+  width: 80%;
+  margin: 0 auto 1rem auto;
+}
+
+.team:hover {
+  border-bottom: 4px solid #fff;
+  background-color: #dd9a05;
+}
+
+.team:hover .img-cover {
+  border-color: #fff;
+}
+
+/* Contact */
+.contact-center {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.left h2 {
+  font-size: 2rem;
+}
+
+.left p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.left div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.left div .content {
+  text-align: left;
+}
+
+.left .icon {
+  margin-right: 2rem;
+  font-size: 2.3rem;
+  color: #dd9a05;
+}
+
+.form h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.form input,
+.form textarea {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  padding: 1rem 0;
+  text-indent: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  outline: none;
+}
+
+.form .right div {
+  display: flex;
+}
+
+.form .right div input {
+  flex: 1 1 50%;
+}
+
+.form textarea {
+  width: 100%;
+  resize: vertical;
+  margin-bottom: 3rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .contact-center {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-center .left {
+    text-align: left;
+  }
+
+  .left div .content h3 {
+    font-size: 1.6rem;
+  }
+
+  .left div .content span {
+    font-size: 1.5rem;
+  }
+}
+
+footer {
+  background-color: #000;
+  padding: 1.6rem 1rem;
+  text-align: center;
+}
+
+footer p {
+  color: #fff;
+}
+
+footer p span {
+  color: #dd9a05;
+}
+
+      
+      @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        user-select: none;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      ssubs {
+        display: inline-block;
+      }
+   
+      nav {
+        background: #1b1b1b;
+      }
+      nav:after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+      nav .logo {
+        float: left;
+        color: white;
+        font-size: 27px;
+        font-weight: 600;
+        line-height: 70px;
+        padding-left: 60px;
+      }
+      nav ul {
+        float: right;
+        margin-right: 40px;
+        list-style: none;
+        position: relative;
+      }
+      nav ul li {
+        float: left;
+        display: inline-block;
+        background: #1b1b1b;
+        margin: 0 5px;
+      }
+      nav ul li a {
+        color: white;
+        line-height: 70px;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 8px 15px;
+      }
+      nav ul li a:hover {
+        color: cyan;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #33ffff, 0 0 10px #66ffff;
+      }
+      nav ul ul li a:hover {
+        box-shadow: none;
+      }
+      nav ul ul {
+        position: absolute;
+        top: 90px;
+        border-top: 3px solid cyan;
+        opacity: 0;
+        visibility: hidden;
+        transition: top 0.3s;
+      }
+      nav ul ul ul {
+        border-top: none;
+      }
+      nav ul li:hover > ul {
+        top: 70px;
+        opacity: 1;
+        visibility: visible;
+      }
+      nav ul ul li {
+        position: relative;
+        margin: 0px;
+        width: 150px;
+        float: none;
+        display: list-item;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+      }
+      nav ul ul li a {
+        line-height: 50px;
+      }
+      nav ul ul ul li {
+        position: relative;
+        top: -60px;
+        left: 150px;
+      }
+      .show,
+      .icon,
+      input {
+        display: none;
+      }
+      .fa-plus {
+        font-size: 15px;
+        margin-left: 40px;
+      }
+      @media all and (max-width: 968px) {
+        nav ul {
+          margin-right: 0px;
+          float: left;
+        }
+        nav .logo {
+          padding-left: 30px;
+          width: 100%;
+        }
+        .show + a,
+        ul {
+          display: none;
+        }
+        nav ul li,
+        nav ul ul li {
+          display: block;
+          width: 100%;
+        }
+        nav ul li a:hover {
+          box-shadow: none;
+        }
+        .show {
+          display: block;
+          color: white;
+          font-size: 18px;
+          padding: 0 20px;
+          line-height: 70px;
+          cursor: pointer;
+        }
+        .show:hover {
+          color: cyan;
+        }
+        .icon {
+          display: block;
+          color: white;
+          position: absolute;
+          top: 0;
+          right: 40px;
+          line-height: 70px;
+          cursor: pointer;
+          font-size: 25px;
+        }
+        nav ul ul {
+          top: 70px;
+          border-top: 0px;
+          float: none;
+          position: static;
+          display: none;
+          opacity: 1;
+          visibility: visible;
+        }
+        nav ul ul a {
+          padding-left: 40px;
+        }
+        nav ul ul ul a {
+          padding-left: 80px;
+        }
+        nav ul ul ul li {
+          position: static;
+        }
+        [id^="btn"]:checked + ul {
+          display: block;
+        }
+        nav ul ul li {
+          border-bottom: 0px;
+        }
+        span.cancel:before {
+          content: "\f00d";
+        }
+      }
+      .content {
+        z-index: -1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      header {
+        font-size: 35px;
+        font-weight: 600;
+        padding: 10px 0;
+      }
+      p {
+        font-size: 30px;
+        font-weight: 500;
+      }
+  
+</style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="home" class="header">
+      <!-- Navigation -->
+
+
+<nav class="navbar">
+      <div class="logo" style="position:fixed;margin-top:70px;margin-left:40px;width:100px"><a href ><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD"><img src="https://2020.igem.org/wiki/images/1/1d/T--mriirs_faridabad--team1Un.png" height="80"></a></div>
+      <label for="btn" class="icon">
+        <span class="fa fa-bars"></span>
+      </label>
+      <input type="checkbox" id="btn" />
+      <ul>
+        <li>
+          <label for="btn-1" class="show">Project +</label>
+          <a href="#">Project +</a>
+          <input type="checkbox" id="btn-1" />
+          <ul >
+            <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Description">Description</a></li>
+            <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Proposed_Implementation" >Proposed Implementation</a></li>
+          </ul>
+        </li>
+        <li>
+          <label for="btn-1" class="show">Engineering Success +</label>
+          <a href="#">Engineering Success +</a>
+          <input type="checkbox" id="btn-1" />
+          <ul>
+            <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Design_Summary">Design Summary</a></li>
+            <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Lab_Notebook">Lab Notebook</a></li>
+            <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Experimentation_Protocols">experimentation Protocol</a></li>
+          </ul>
+        </li>
+        <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Contribution">Contribution</a></li>
+        <li>
+          <label for="btn-2" class="show">Human Practices +</label>
+          <a href="#">Human Practices +</a>
+          <input type="checkbox" id="btn-2" />
+          <ul>
+            <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Collaborations">Collaborations</a></li>
+            <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Human_Practices"> Intigrated Human Practices</a></li>
+            <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Science_Communication">Science Communication</a></li>
+          </ul>
+        </li>
+        <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Model">Project Modeling</a></li>
+        <li>
+          <label for="btn-2" class="show">Judging +</label>
+          <a href="#">Judging +</a>
+          <input type="checkbox" id="btn-2" />
+          <ul>
+            <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Awards">Awards</a></li>
+          </ul>
+        </li>
+        <li>
+          <label for="btn-2" class="show">Team +</label>
+          <a href="#">Team +</a>
+          <input type="checkbox" id="btn-2" />
+          <ul>
+            <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Team_Members">Team Members</a></li>
+            <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Attributions">Attributions</a></li>
+            <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Sponsors">Sponsors</a></li>
+          </ul>
+        </li>
+        
+      </ul>
+    </nav>
+
+
+
+      <!-- Hero -->
+      <div >
+            <div class="hero" style="margin-top:6%">
+              <h3 style="font-size:40px">Genetically Engineered E.coli to detect and estimate the &nbsp; N-Nitrosamines in water.</h3>
+              <p style="font-size:20px; text-align: center;" class="container">Even though Nitrogen in its molecular form (N2), is the most abundant and an essential
+                              compound in earth’s atmosphere to sustain life, our environmental interest has always
+                              manifested its conversion into other chemically reactive forms. With prime focus on carbon
+                              pollution in recent decades, alarming increase in the levels of ‘Reactive Nitrogen’ in the
+                              environment has gone largely unnoticed.</p>
+            
+            </div>
+            <div class="container" style="margin-left: 25%; text-align: center;">
+              <video controls autoplay width="500" height="400" padding-left="80%" >
+                <source
+                  src="https://2020.igem.org/wiki/images/f/f8/T--MRIIRS_FARIDABAD--Poster_poster12.mp4"
+                />
+              </video>
+            </div>
+      <div>
+    </header>
+
+    <!-- Main -->
+    <section class="section about" id="about">
+      <div class="title">
+        <h1>Introduction</h1>
+      </div>
+
+     
+        
+        <div class="right" data-aos="fade-left" data-aos-duration="2000">
+          
+         <p style="font-size:20px;margin-left:5%;margin-right:5%" >Alkylating agents represent a broad class of DNA-damaging agents that are present in the
+environment. They are used as chemotherapeutic agents and can be formed endogenously
+during cellular metabolism. N-Nitrosamines are alkylating agents that can be found in
+processed foods as unintentional by-products of food preparation and processing. In recent
+years, it has been discovered that nitrosamines may be formed as by-products during
+disinfection of drinking water with dichloramine. The predominant nitrosamine formed is N-
+nitrosodimethylamine (NDMA). Nitrosamines are considered to be strong carcinogens that
+may produce cancer in diverse organs and tissues including lung, brain, liver, kidney,
+bladder, stomach, esophagus, and nasal sinus.
+<p style="font-size:20px;margin-left:5%;margin-right:5%">Upon metabolic activation and also spontaneously, they form electrophilic species that
+methylate the DNA, producing N -methylated purines and O6 -methylguanine, the latter of
+which bears high mutagenic and carcinogenic potential.</p><p style="font-size:20px;margin-left:5%;margin-right:5%">
+Through our project, we aim to utilize a natural adaptive response mechanism of E.coli to
+detect the presence of such alkylating agents in water and subsequently destroy NDMA..</p>
+
+        </div>
+      
+    </section>
+
+    <!-- Services -->
+    <section class="section theme" id="services" style="color:white;font-size:20px">
+     <div class="container " style="padding:40px 12px" >
+        <h2 style="font-size:50px;padding-left:30%">Lab Practice</h2>
+        <div class="mx-auto heading line"> </div>
+        <p style="font-size:20px;margin-left:5%;margin-right:5%; text-align: center;" >
+            Our specific objectives are to engineer E. coli cells that:
+            <ol style="padding-top:30px">
+                <li> <p style="font-size:20px;margin-left:5%;margin-right:5%"> Detect the N-Nitrosamines present in water post disinfection stage. </p> </li>
+                <li> <p style="font-size:20px;margin-left:5%;margin-right:5%"> Upon detection, their degradation. </p> </li>
+            </ol>
+<p style="font-size:20px;margin-left:5%;margin-right:5%;padding-top:30px">
+            To achieve this, we will transform a construct in E.coli which constitutively produces a protein molecule-
+            ADA(adaptive response protein) in lower concentrations. These proteins are released in E. coli upon DNA
+            damage caused due to alkylation. These protein molecules shall increase in number when nitrosamines are
+            detected by E. coli as they cause methylation in DNA. This will be followed by a reporting- fluorescence
+            expression by the bacteria directly proportional to the concentration of N-Nitrosamines present in the water
+            sample. It shall lead to downward signaling cascade towards the degradation segment which shall degrade
+            the Nitrosamines detected by the construct. The changes in colour expression gives an estimate of N-Nitrosamines degraded.
+</p><table class="table" style="padding-top:40px">
+                <table border="3" height="20px" style="font-family:Georgia, Garamond, Serif;color:#ff9933;font-style:italic;">
+
+                <thead>
+                  <tr>
+                    <th >N-Nitrosamine</th>
+                    <th>Chemical Abstract Services (CAS) Registry Number</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>N-Nitrosodimethylamine</td>
+                    <td>(NDMA) 62-75-9</td>
+                  </tr>
+                  <tr>
+                    <td> N-Nitrosomethylethylamine </td>
+                    <td>(NMEA) 10595-95-6</td>
+                  </tr>
+                  <tr>
+                    <td>  N-Nitrosodiethylamine  </td>
+                    <td>(NDEA) 55-18-5</td>
+                  </tr>
+                  <tr>
+                    <td>N-Nitrosodi-n-propylamine </td>
+                    <td>(NDPA) 621-64-7</td>
+                  </tr>
+                  <tr>
+                    <td> N-Nitrosomethylethylamine </td>
+                    <td>(NDBA) 924-16-3</td>
+                  </tr>
+                  <tr>
+                    <td>  N-Nitrosopyrollidine  </td>
+                    <td>(NPYR) 930-55-2</td>
+                  </tr>
+                  <tr>
+                    <td> N-Nitrosopiperidine </td>
+                    <td>(NPIP) 100-75-4.</td>
+                  </tr>
+                  </tbody>
+                </tbody>
+              </table>
+              <p style="font-size:20px;margin-left:5%;margin-right:5%"><br>Several methods have been applied to estimate the concentration level of these N-Nitrosamines formed as
+                by-products in potable water post disinfection stage. Apart from assessing their chemical concentration and
+                then removing them; estimation of precursor molecules before and after disinfection procedure at different
+                interval of time have been taken into consideration. Owing to different routes followed for disinfection
+                (Chlorination / Chloramination/ Ozonation/ UV Radiation/ Electronic Radiation/ heat); an accurate
+                concentration of the compounds cannot be estimated and hence, these compounds cannot be completely
+                removed from the water. However due to poor extraction efficiencies and nonselective and nondistinctive
+                solid phase extraction and GC/MS electron ionization techniques, calculated results vary from actual
+                results. Our engineered E. coli should serve as a cost-effective yet potent alternative option when compared
+                to currently used detection and removal methods. Since we are using a biological mediator and using it as
+                a biosensing solution; ease of usage with respect to time intervals, their removal from water and manpower
+                employed when compared to the chemical-based assessments increases considerably. Chemical detection
+                and degradation of these compounds have been a challenge to make the potable water free from these
+                compounds. Our synthetic approach offers a much simpler alternative route to detect and degrade the
+                targeted compounds.</p>
+            </div>
+            
+    </div>
+    </section>
+
+
+
+    <!-- Teams -->
+    <section class="section theme" id="teams" style="color:white;display:flex;font-size:10px">
+
+     <div class="container" style="padding:60px 12px" >
+        
+        <h3 class="py-3 center " style="margin: 4rem 0 7rem 0;
+  text-align: center;font-size:50px">THE TEAM</h3>
+        <div class="py-3-row-padding py3-grayscale" >
+          <div class="mx-auto heading-line">
+            <div class="row">
+
+                <div class="col-md-4 text-center">
+                    <img src="https://2020.igem.org/wiki/images/9/9c/T--mriirs_faridabad--team1team1.jpg" alt="John" style="width:63%">
+                    <h4 class="py-3">Dr. Kapila Kumar</h4>
+                    <p class="pb-5">Dr. Kapila Kumar is the most powerful trainer just the way Cynthia is. Her approach towards research is what makes her the most admirable trainer.Her calm attitude, optimistic approach and adorable nature creates an ever so lasting charismatic aura around us. She had very beautifully sown the seeds of iGEM in us back in December'19 and is nurturing them since then just like a mother.
+                        We are forever grateful to our Cynthia.</p>
+
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="https://2020.igem.org/wiki/images/6/6d/T--mriirs_faridabad--team1team2.jpg" alt="John" style="width:63%">
+                    <h4 class="py-3">Shivani Khare</h4>
+                    <p class="pb-5">I am 'Eevee'- the evolution pokemon. True to its name I am the multitasker to the team; I evolve and transfer into roles as and when needed. Like Eevee Im irregularly structured and help the team survive and thrive in any situation and suit all surroundings. </p>
+                    
+                </div>
+<div class="col-md-4 text-center">
+                    <img src="https://2020.igem.org/wiki/images/6/6a/T--mriirs_faridabad--team1team3.jpg" alt="John" style="width:63%">
+                    <h4 class="py-3">Abhilansh Pandey</h4>
+                    <p class="pb-5">I'm Pikachu for my team. I have powerful electrical abilities which helps in keeping everyone around me energetic. Just like Pikachu, my brain works really fast and logical all the time. I'm the one to whom the team can look upon for help in any division of work. In project, I am dedicatedly working on mathematical modelling and research work.</p>
+                    
+                </div>
+<div class="col-md-4 text-center">
+                    <img src="https://2020.igem.org/wiki/images/3/36/T--mriirs_faridabad--team1sri1.jpg" alt="John" style="width:63%">
+                    <h4 class="py-3">Sristhi Chopra</h4>
+                    <p class="pb-5">I am the Legendary Mewtwo for our project. I have utilized my energy in the right direction during the project, communicated with people in and around the project and I could make out what has to be done at the right time. I have enthusiastically involved myself in mathematical modelling, presentations and human practices.</p>
+                    
+                </div><div class="col-md-4 text-center">
+                    <img src="https://2020.igem.org/wiki/images/3/3d/T--mriirs_faridabad--team1team5.jpg" alt="John" style="width:63%">
+                    <h4 class="py-3">Hardik Grover</h4>
+                    <p class="pb-5">Pokémonically coincides with Mew, having a notable and unique ability to learn every Technical Machine, Technical Record, and Hidden Machine, and can make itself invisible at will. Besides that, Mew defines my commitment and proofreading abilities. Initially, my job along with my fellow technical person was to target the Biological aspect to design the project and later it focused to design, standardize and perform the experiments.</p>
+                    
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="https://2020.igem.org/wiki/images/9/93/T--mriirs_faridabad--team1team6.jpg" alt="John" style="width:63%">
+                    <h4 class="py-3">Tarini Vohra </h4>
+                    <p class="pb-5">Pidgey is known for its keen eye and being on the technical front of this project, it gave me an opportunity to explore my fastidiousness towards developing the working bones of the project.
+                        I was primarily involved in the ideation process and understanding the nitty gritty of the technical aspects to arrive at a solid design/scheme for the project. I was also a part of the experimentation team and was associated with designing and performing both wet lab and dry lab experiments.</p>
+                </div>
+
+ <div class="col-md-4 text-center">
+                    <img src="https://2020.igem.org/wiki/images/b/b6/T--mriirs_faridabad--team1team7.jpg" alt="John" style="width:63%">
+                    <h4  class="py-3">Kartik Jatwani </h4>
+                    <p class="pb-5">I am the Legendary Golbat for our project. I've got inner focus and i don't flinch in any situation. I can commit to work and I think it's in my genes. And yes I would love to edit my genes to try out all the different combinations.</p>
+
+
+                  
+                </div><div class="col-md-4 text-center">
+                    <img src="https://2020.igem.org/wiki/images/1/10/T--mriirs_faridabad--team1team8.jpg" alt="John" style="width:63%">
+                    <h4  class="py-3">Umra Mahmood </h4>
+                    <p  class="pb-5">I am Jigglypuff of our project. I am keen eyed, charming, active and energetic. I have fully utilised my abilities in literature survey, mathematical modeling and in technicalities associated with our project!!!
+                    </p>
+                </div><div class="col-md-4 text-center">
+                    <img src="https://2020.igem.org/wiki/images/a/ac/T--mriirs_faridabad--team1team9.jpg" alt="John" style="width:63%">
+                    <h4  class="py-3">Dewashish Kaushik</h4>
+                    <p  class="pb-5">I am the kadabra of my team as I have inner focus which helps me in doing my tasks as a part of mathematical modelling team. Also, I along with my teammates synchronized the whole work related to mathematical modelling for extracting useful results.
+                    </p>
+                </div><div class="col-md-4 text-center">
+                    <img src="https://2020.igem.org/wiki/images/a/a7/T--mriirs_faridabad--team1team10.jpg" alt="John" style="width:63%">
+                    <h4  class="py-3">Alokit Tanwar </h4>
+                    <p  class="pb-5">I am charizard of my team. Just like charizard, I'm furious and I utilize all my abilities and capabilities while working with my human practices team. Also I have contributed in finding out important connections for my team as a part of Integrated Human Practices.
+                    </p>
+                </div><div class="col-md-4 text-center">
+                    <img src="https://2020.igem.org/wiki/images/1/1d/T--mriirs_faridabad--team1team11.jpg" alt="John" style="width:63%">
+                    <h4  class="py-3">Shivam Bhardwaj </h4>
+                    <p  class="pb-5">I am arceus of my team. I have performed all the tasks in a well organized manner due to the abilities that I possess. My team believes that I am a integral part of human practices team as I have utilized my abilities to communicate people from different backgrounds and also handle all the social media pages of my team.
+                    </p>
+                </div><div class="col-md-4 text-center">
+                    <img src="https://2020.igem.org/wiki/images/5/55/T--mriirs_faridabad--team1team12.jpg" alt="John" style="width:63%">
+                    <h4  class="py-3">Chander Shekhar </h4>
+                    <p  class="pb-5">My willingness to learn and curosity to know things is what makes me different from others.
+                        Along with one of my team mates I have been involved in developing wiki for our team.
+                        I am overwhelmingly glad to be a part of iGEM where I can further sharpen my skills!
+                    </p>
+                </div>
+<div class="col-md-4 text-center">
+                    <img src="https://2020.igem.org/wiki/images/8/8c/T--mriirs_faridabad--team1team13.jpg" alt="John" style="width:63%; margin-left: auto;
+  margin-right: auto;" class="center">
+                    <h4  class="py-3">Japneet Singh  </h4>
+                    <p  class="pb-5">I am a person who is curious, open to learn new things and implement it. I am a wiki developer in my team, where I am developing a wiki to represent the valuable work which my team is doing. I am glad to be a part of iGEM competition where I sharpen-up my skills, build networks.
+                    </p>
+                </div>
+              
+                
+            </div>
+        </div>
+     
+
+      </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+         <div class="container">
+        <div class=" text center py-5">
+        <h2 class="py-3">Contact Us</h2>
+        <div class="mx-auto heading line"> </div>
+        <div class="row ">
+        <div class="col-lg-6 ">
+            <div id="map-container-google-1" class="z-depth-1-half map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14031.872386299363!2d77.2837474!3d28.4503781!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x87c9e10e1ae0b0fc!2sManav%20Rachna%20International%20Institute%20Of%20Research%20And%20Studies!5e0!3m2!1sen!2sin!4v1593616291924!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+         </div>
+         
+              
+<form class="col-lg-6">
+    
+    <div class="contact-content mt-5 offset-md-1 col-md-10">
+           
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input id="name" class="form-control" type="text"  placeholder="enter name"> 
+                
+            </div>
+ <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" class="form-control" type="email" aria-describedby="emailHint" placeholder="enter email"> 
+                <small id="emailHint" class="form-text text-muted"></small>
+            </div>
+        
+           <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" class="form-control" placeholder="enter Message" rows="5"> </textarea> 
+            </div>
+           <button type="submit" class="btn btn-lg btn-outline-primary">Submit</button>
+        </form>
+        </div>
+
+    </div>
+    </section>
+
+    <h3 style="padding-left:40px;font-size:30px;text-align:center">
+We like to thank our sponsors for believing in us and supporting us through this incredible journey of lifetime.
+ </h3>
+<div class="row">
+<div class="column">
+<img src="https://2020.igem.org/wiki/images/5/53/T--mriirs_faridabad--team1we1.jpg"  style="width:200px;height:200px;"> </div>
+<div class="column">
+    <img src="https://2020.igem.org/wiki/images/f/fc/T--mriirs_faridabad--team1we2.jpg"  style="width:200px;height:200px;">
+</div><br></br><br></br>
+<div class="column">
+<img src="https://2020.igem.org/wiki/images/3/3f/T--mriirs_faridabad--team1we4.jpg"  style="width:200px;height:200px;">
+</div>
+<div class="column">
+
+<img src="https://2020.igem.org/wiki/images/f/f4/T--mriirs_faridabad--team1we5.jpg"  style="width:200px;height:200px;">
+</div><br></br><br></br>
+<div class="column">
+   <img src="https://2020.igem.org/wiki/images/4/44/T--mriirs_faridabad--team1we6.jpg" style="width:200px;height:200px;">
+</div>
+</div>
+    <div class=" container text center w-50">
+
+        
+        <div class="mx-auto heading line"> </div>
+        </div>
+        
+        </div>    
+<div class="copyright text-center py-3 border-top text-muted">
+    <p > &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b> Made by MRIIRS_FARIDABAD &copy; 2020
+</b>
+</p>
+</div>
+
+   
+
+    <!-- AOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Typeit -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typeit/7.0.4/typeit.min.js"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <!-- Glidejs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js"></script>
+    <!-- Custom Script -->
+    <script >
+    AOS.init();
+
+const menu = document.querySelector(".menu");
+const navOpen = document.querySelector(".hamburger");
+const navClose = document.querySelector(".close");
+
+const navLeft = menu.getBoundingClientRect().left;
+navOpen.addEventListener("click", () => {
+  if (navLeft < 0) {
+    menu.classList.add("show");
+    document.body.classList.add("show");
+    navBar.classList.add("show");
+  }
+});
+
+navClose.addEventListener("click", () => {
+  if (navLeft < 0) {
+    menu.classList.remove("show");
+    document.body.classList.remove("show");
+    navBar.classList.remove("show");
+  }
+});
+
+// Fixed Nav
+const navBar = document.querySelector(".nav");
+const navHeight = navBar.getBoundingClientRect().height;
+window.addEventListener("scroll", () => {
+  const scrollHeight = window.pageYOffset;
+  if (scrollHeight > navHeight) {
+    navBar.classList.add("fix-nav");
+  } else {
+    navBar.classList.remove("fix-nav");
+  }
+});
+
+// Scroll To
+const links = [...document.querySelectorAll(".scroll-link")];
+links.map(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+
+    const id = e.target.getAttribute("href").slice(1);
+    const element = document.getElementById(id);
+    const fixNav = navBar.classList.contains("fix-nav");
+    let position = element.offsetTop - navHeight;
+
+    window.scrollTo({
+      top: position,
+      left: 0,
+    });
+
+    navBar.classList.remove("show");
+    menu.classList.remove("show");
+    document.body.classList.remove("show");
+  });
+});
+
+new TypeIt("#type1", {
+  speed: 120,
+  loop: true,
+  waitUntilVisible: true,
+})
+  .type("Designer", { delay: 400 })
+  .pause(500)
+  .delete(9)
+  .type("Developer", { delay: 400 })
+  .pause(500)
+  .delete(9)
+  .go();
+
+new TypeIt("#type2", {
+  speed: 120,
+  loop: true,
+  waitUntilVisible: true,
+})
+  .type("Designer", { delay: 400 })
+  .pause(500)
+  .delete(9)
+  .type("Developer", { delay: 400 })
+  .pause(500)
+  .delete(9)
+  .go();
+
+gsap.from(".logo", { opacity: 0, duration: 1, delay: 0.5, y: -10 });
+gsap.from(".hamburger", { opacity: 0, duration: 1, delay: 1, x: 20 });
+gsap.from(".banner", { opacity: 0, duration: 1, delay: 1.5, x: -200 });
+gsap.from(".hero h3", { opacity: 0, duration: 1, delay: 2, y: -50 });
+gsap.from(".hero h1", { opacity: 0, duration: 1, delay: 2.5, y: -45 });
+gsap.from(".hero h4", { opacity: 0, duration: 1, delay: 3, y: -30 });
+gsap.from(".hero a", { opacity: 0, duration: 1, delay: 3.5, y: 50 });
+gsap.from(".nav-item", {
+  opacity: 0,
+  duration: 1,
+  delay: 1.2,
+  y: 30,
+  stagger: 0.2,
+});
+gsap.from(".icons span", {
+  opacity: 0,
+  duration: 1,
+  delay: 4,
+  x: -30,
+  stagger: 0.2,
+});
+
+const glide = document.querySelector(".glide");
+if (glide)
+  new Glide(glide, {
+    type: "carousel",
+    startAt: 0,
+    perView: 3,
+    gap: 30,
+    hoverpause: true,
+    autoplay: 2000,
+    animationDuration: 800,
+    animationTimingFunc: "cubic-bezier(0.165, 0.840, 0.440, 1.000)",
+    breakpoints: {
+      996: {
+        perView: 2,
+      },
+      768: {
+        perView: 1,
+      },
+    },
+  }).mount();
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <!-- Somehow I got an error, so I comment the title, just uncomment to show -->
+    <!-- <title>Responsive Drop-down Menu Bar</title> -->
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+    @import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #12172b;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  margin: 20px 40px;
+  color: white;
+  display: inline-block;
+}
+
+.heading {
+  font-size: 60px;
+  color: white;
+}
+
+.heading span {
+  font-style: italic;
+  font-size: 30px;
+}
+
+.profiles {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 80px;
+}
+
+.profile {
+  flex-basis: 260px;
+}
+
+.profile .profile-img {
+  height: 260px;
+  width: 260px;
+  border-radius: 50%;
+
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.profile:hover .profile-img {
+  filter: grayscale(0);
+}
+
+.user-name {
+  margin-top: 30px;
+  font-size: 35px;
+}
+
+.profile h5 {
+  font-size: 18px;
+  font-weight: 100;
+  letter-spacing: 3px;
+  color: #ccc;
+}
+
+.profile p {
+  font-size: 16px;
+  margin-top: 20px;
+  text-align: justify;
+}
+
+@media only screen and (max-width: 1150px) {
+  .profiles {
+    flex-direction: column;
+  }
+
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile p {
+    text-align: center;
+    margin: 20px 60px 80px 60px;
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .heading {
+    font-size: 40px;
+    color: white;
+    text-align: center;
+  }
+
+  .heading span {
+    font-size: 15px;
+  }
+
+  .profiles {
+    margin: 20px 0;
+  }
+
+  .profile p {
+    margin: 20px 10px 80px 10px;
+  }
+}
+
+      @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        user-select: none;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      ssubs{
+          display: inline-block;
+      }
+      body {
+        background-color: #12172b;
+  font-family: "Poppins", sans-serif;
+      }
+      nav {
+        background: #1b1b1b;
+      }
+      nav:after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+      nav .logo {
+        float: left;
+        color: white;
+        font-size: 27px;
+        font-weight: 600;
+        line-height: 70px;
+        padding-left: 60px;
+      }
+      nav ul {
+        float: right;
+        margin-right: 40px;
+        list-style: none;
+        position: relative;
+      }
+      nav ul li {
+        float: left;
+        display: inline-block;
+        background: #1b1b1b;
+        margin: 0 5px;
+      }
+      nav ul li a {
+        color: white;
+        line-height: 70px;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 8px 15px;
+      }
+      nav ul li a:hover {
+        color: cyan;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #33ffff, 0 0 10px #66ffff;
+      }
+      nav ul ul li a:hover {
+        box-shadow: none;
+      }
+      nav ul ul {
+        position: absolute;
+        top: 90px;
+        border-top: 3px solid cyan;
+        opacity: 0;
+        visibility: hidden;
+        transition: top 0.3s;
+      }
+      nav ul ul ul {
+        border-top: none;
+      }
+      nav ul li:hover > ul {
+        top: 70px;
+        opacity: 1;
+        visibility: visible;
+      }
+      nav ul ul li {
+        position: relative;
+        margin: 0px;
+        width: 150px;
+        float: none;
+        display: list-item;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+      }
+      nav ul ul li a {
+        line-height: 50px;
+      }
+      nav ul ul ul li {
+        position: relative;
+        top: -60px;
+        left: 150px;
+      }
+      .show,
+      .icon,
+      input {
+        display: none;
+      }
+      .fa-plus {
+        font-size: 15px;
+        margin-left: 40px;
+      }
+      @media all and (max-width: 968px) {
+        nav ul {
+          margin-right: 0px;
+          float: left;
+        }
+        nav .logo {
+          padding-left: 30px;
+          width: 100%;
+        }
+        .show + a,
+        ul {
+          display: none;
+        }
+        nav ul li,
+        nav ul ul li {
+          display: block;
+          width: 100%;
+        }
+        nav ul li a:hover {
+          box-shadow: none;
+        }
+        .show {
+          display: block;
+          color: white;
+          font-size: 18px;
+          padding: 0 20px;
+          line-height: 70px;
+          cursor: pointer;
+        }
+        .show:hover {
+          color: cyan;
+        }
+        .icon {
+          display: block;
+          color: white;
+          position: absolute;
+          top: 0;
+          right: 40px;
+          line-height: 70px;
+          cursor: pointer;
+          font-size: 25px;
+        }
+        nav ul ul {
+          top: 70px;
+          border-top: 0px;
+          float: none;
+          position: static;
+          display: none;
+          opacity: 1;
+          visibility: visible;
+        }
+        nav ul ul a {
+          padding-left: 40px;
+        }
+        nav ul ul ul a {
+          padding-left: 80px;
+        }
+        nav ul ul ul li {
+          position: static;
+        }
+        [id^="btn"]:checked + ul {
+          display: block;
+        }
+        nav ul ul li {
+          border-bottom: 0px;
+        }
+        span.cancel:before {
+          content: "\f00d";
+        }
+      }
+      .content {
+        z-index: -1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      header {
+        font-size: 35px;
+        font-weight: 600;
+        padding: 10px 0;
+      }
+      p {
+        font-size: 30px;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo"><a href ><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD"><img src="https://2020.igem.org/wiki/images/1/1d/T--mriirs_faridabad--team1Un.png" height="80"></a></div>
+      <label for="btn" class="icon">
+        <span class="fa fa-bars"></span>
+      </label>
+      <input type="checkbox" id="btn" />
+      <ul>
+        <li>
+          <label for="btn-1" class="show">Project +</label>
+          <a href="#">Project +</a>
+          <input type="checkbox" id="btn-1" />
+          <ul >
+            <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Description">Description</a></li>
+            <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Proposed_Implementation" >Proposed Implementation</a></li>
+          </ul>
+        </li>
+        <li>
+          <label for="btn-1" class="show">Engineering Success +</label>
+          <a href="#">Engineering Success +</a>
+          <input type="checkbox" id="btn-1" />
+          <ul>
+            <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Design_Summary">Design Summary</a></li>
+            <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Lab_Notebook">Lab Notebook</a></li>
+            <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Experimentation_Protocols">experimentation Protocol</a></li>
+          </ul>
+        </li>
+        <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Contribution">Contribution</a></li>
+        <li>
+          <label for="btn-2" class="show">Human Practices +</label>
+          <a href="#">Human Practices +</a>
+          <input type="checkbox" id="btn-2" />
+          <ul>
+            <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Collaborations">Collaborations</a></li>
+            <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Human_Practices"> Intigrated Human Practices</a></li>
+            <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Science_Communication">Science Communication</a></li>
+          </ul>
+        </li>
+        <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Model">Project Modeling</a></li>
+        <li>
+          <label for="btn-2" class="show">Judging +</label>
+          <a href="#">Judging +</a>
+          <input type="checkbox" id="btn-2" />
+          <ul>
+            <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Awards">Awards</a></li>
+          </ul>
+        </li>
+        <li>
+          <label for="btn-2" class="show">Team +</label>
+          <a href="#">Team +</a>
+          <input type="checkbox" id="btn-2" />
+          <ul>
+            <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Team_Members">Team Members</a></li>
+            <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Attributions">Attributions</a></li>
+            <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Sponsors">Sponsors</a></li>
+          </ul>
+        </li>
+        
+      </ul>
+    </nav>
+
+
+
+
+
+    <div class="container">
+      <h1 class="heading"><span>Meet </span>Our Team</h1>
+
+      <div class="profiles">
+        <div class="profile">
+          <img
+            src="https://2020.igem.org/wiki/images/9/9c/T--mriirs_faridabad--team1team1.jpg"
+            alt="John"
+            style="width: 85%"
+            class="profile-img"
+          />
+
+          <h3 class="user-name">Dr. Kapila Kumar</h3>
+
+          <p>
+            Dr. Kapila Kumar is the most powerful trainer just the way Cynthia
+            is. Her approach towards research is what makes her the most
+            admirable trainer.Her calm attitude, optimistic approach and
+            adorable nature creates an ever so lasting charismatic aura around
+            us. She had very beautifully sown the seeds of iGEM in us back in
+            December'19 and is nurturing them since then just like a mother. We
+            are forever grateful to our Cynthia.
+          </p>
+        </div>
+        <div class="profile">
+          <img
+            src="https://2020.igem.org/wiki/images/6/6d/T--mriirs_faridabad--team1team2.jpg"
+            class="profile-img"
+          />
+
+          <h3 class="user-name">Shivani Khare</h3>
+
+          <p>
+            I am 'Eevee'- the evolution pokemon. True to its name I am the
+            multitasker to the team; I evolve and transfer into roles as and
+            when needed. Like Eevee Im irregularly structured and help the team
+            survive and thrive in any situation and suit all surroundings!!.
+          </p>
+        </div>
+        <div class="profile">
+          <img
+            src="https://2020.igem.org/wiki/images/6/6a/T--mriirs_faridabad--team1team3.jpg"
+            class="profile-img"
+          />
+
+          <h3 class="user-name">Abhilansh Pandey</h3>
+
+          <p>
+            I'm Pikachu for my team. I have powerful electrical abilities which
+            helps in keeping everyone around me energetic. Just like Pikachu, my
+            brain works really fast and logical all the time. I'm the one to
+            whom the team can look upon for help in any division of work. In
+            project, I am dedicatedly working on mathematical modelling and
+            research work.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="profiles">
+        <div class="profile">
+          <img
+            src="https://2020.igem.org/wiki/images/3/36/T--mriirs_faridabad--team1sri1.jpg"
+            alt="John"
+            style="width: 85%"
+            class="profile-img"
+          />
+
+          <h3 class="user-name">Sristhi Chopra</h3>
+
+          <p>
+           I am the Legendary Mewtwo for our project. I have utilized my energy in the right direction during the project, communicated with people in and around the project and I could make out what has to be done at the right time. I have enthusiastically involved myself in mathematical modelling, presentations and human practices.
+          </p>
+        </div>
+        <div class="profile">
+          <img
+            src="https://2020.igem.org/wiki/images/3/3d/T--mriirs_faridabad--team1team5.jpg"
+            class="profile-img"
+          />
+
+          <h3 class="user-name">Hardik Grover</h3>
+
+          <p>
+            Pokémonically coincides with Mew, having a notable and unique ability to learn every Technical Machine, Technical Record, and Hidden Machine, and can make itself invisible at will. Besides that, Mew defines my commitment and proofreading abilities. Initially, my job along with my fellow technical person was to target the Biological aspect to design the project and later it focused to design, standardize and perform the experiments
+          </p>
+        </div>
+        <div class="profile">
+          <img
+            src="https://2020.igem.org/wiki/images/9/93/T--mriirs_faridabad--team1team6.jpg"
+            class="profile-img"
+          />
+
+          <h3 class="user-name">Tarini Vohra</h3>
+
+          <p>
+            Pidgey is known for its keen eye and being on the technical front of this project, it gave me an opportunity to explore my fastidiousness towards developing the working bones of the project. I was primarily involved in the ideation process and understanding the nitty gritty of the technical aspects to arrive at a solid design/scheme for the project. I was also a part of the experimentation team and was associated with designing and performing both wet lab and dry lab experiments.
+          </p>
+        </div>
+      </div>
+    <div class="container">
+      <div class="profiles">
+        <div class="profile">
+          <img
+            src="https://2020.igem.org/wiki/images/b/b6/T--mriirs_faridabad--team1team7.jpg"
+            alt="John"
+            style="width: 85%"
+            class="profile-img"
+          />
+
+          <h3 class="user-name">Kartik Jatwani </h3>
+
+          <p>
+           I am the Legendary Golbat for our project. I've got inner focus and i don't flinch in any situation. I can commit to work and I think it's in my genes. And yes I would love to edit my genes to try out all the different combinations.
+          </p>
+        </div>
+
+
+
+
+        <div class="profile">
+          <img
+            src="https://2020.igem.org/wiki/images/1/10/T--mriirs_faridabad--team1team8.jpg"
+            class="profile-img"
+          />
+
+          <h3 class="user-name"> Umra Mahmood</h3>
+
+          <p>
+            I am Jigglypuff of our project. I am keen eyed, charming, active and energetic. I have fully utilised my abilities in literature survey, mathematical modeling and in technicalities associated with our project!!!
+          </p>
+        </div>
+
+
+
+
+        <div class="profile">
+          <img
+            src="https://2020.igem.org/wiki/images/a/ac/T--mriirs_faridabad--team1team9.jpg"
+            class="profile-img"
+          />
+
+          <h3 class="user-name">Dewashish Kaushik</h3>
+
+          <p>
+           I am the kadabra of my team as I have inner focus which helps me in doing my tasks as a part of mathematical modelling team. Also, I along with my teammates synchronized the whole work related to mathematical modelling for extracting useful results.
+          </p>
+        </div>
+      </div>
+  
+
+
+
+
+    <div class="container">
+      <div class="profiles">
+        <div class="profile">
+          <img
+            src="https://2020.igem.org/wiki/images/a/a7/T--mriirs_faridabad--team1team10.jpg"
+            alt="John"
+            style="width: 85%"
+            class="profile-img"
+          />
+
+          <h3 class="user-name">Alokit Tanwar</h3>
+
+          <p>
+           I am charizard of my team. Just like charizard, I'm furious and I utilize all my abilities and capabilities while working with my human practices team. Also I have contributed in finding out important connections for my team as a part of Integrated Human Practices.
+          </p>
+        </div>
+
+
+
+
+
+        <div class="profile">
+          <img
+            src="https://2020.igem.org/wiki/images/1/1d/T--mriirs_faridabad--team1team11.jpg"
+            class="profile-img"
+          />
+
+          <h3 class="user-name">Shivam Bhardwaj </h3>
+
+          <p>
+            I am arceus of my team. I have performed all the tasks in a well organized manner due to the abilities that I possess. My team believes that I am a integral part of human practices team as I have utilized my abilities to communicate people from different backgrounds and also handle all the social media pages of my team!!!
+          </p>
+        </div>
+
+
+
+
+        <div class="profile">
+          <img
+            src="https://2020.igem.org/wiki/images/5/55/T--mriirs_faridabad--team1team12.jpg"
+            class="profile-img"
+          />
+
+          <h3 class="user-name">Chander Shekhar </h3>
+
+          <p>
+          My willingness to learn and curosity to know things is what makes me different from others.
+                        Along with one of my team mates I have been involved in developing wiki for our team.
+                        I am overwhelmingly glad to be a part of iGEM where I can further sharpen my skills!
+          </p>
+        </div>
+      </div>
+
+
+
+
+      
+  <div class="container">
+ <div class="profiles">
+        <div class="profile">
+          <img
+            src="https://2020.igem.org/wiki/images/8/8c/T--mriirs_faridabad--team1team13.jpg"
+            alt="John"
+            style="width: 85%"
+            class="profile-img"
+          />
+
+          <h3 class="user-name">Japneet Singh</h3>
+
+          <p>
+            I am a person who is curious, open to learn new things and implement it. I am a wiki developer in my team, where I am developing a wiki to represent the valuable work which my team is doing. I am glad to be a part of iGEM competition where I sharpen-up my skills, build networks.
+          </p>
+        </div>
+
+
+
+
+    <script>
+      $(".icon").click(function () {
+        $("span").toggleClass("cancel");
+      });
+    </script>
+  </body>
+</html>
