@@ -13,7 +13,7 @@
       body {
         margin-top: 50px;
         background-color: #310e68;
-        background-image: linear-gradient(316deg, #310e68 0%, #5f0f40 74%);
+     
       }
       .container {
         width: 90%;
@@ -22,6 +22,7 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
+        z-index:-100;
       }
 
       .box {
@@ -230,6 +231,7 @@
         font-size: 35px;
         font-weight: 600;
         padding: 10px 0;
+        z-index:-100;
       }
       p {
         font-size: 30px;
@@ -259,9 +261,9 @@
           <label for="btn-1" class="show">Project +</label>
           <a href="#">Project +</a>
           <input type="checkbox" id="btn-1" />
-          <ul >
+          <ul style="z-index:100;">
             <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Description">Description</a></li>
-            <li><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Proposed_Implementation" >Proposed Implementation</a></li>
+            <li style="z-index:100;"><a href="https://2020.igem.org/Team:MRIIRS_FARIDABAD/Proposed_Implementation" >Proposed Implementation</a></li>
           </ul>
         </li>
         <li>
